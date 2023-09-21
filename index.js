@@ -1,14 +1,14 @@
-//--------Tareas-----------
+// Gestor de Tareas
 const tareaInput = document.getElementById("tareaInput");
-const taskList = document.getElementById("tareaList");
+const listaTareas = document.getElementById("listaTareas");
 const filtroPrioridad = document.getElementById("filtroPrioridad");
 let tareas = [];
 
-function añadirTarea() {
-    const tareaText = tareaInput.value.trim();
-    if (tareaText !== "") {
+function agregarTarea() {
+    const textoTarea = tareaInput.value.trim();
+    if (textoTarea !== "") {
         const tarea = {
-            texto: tareaText,
+            texto: textoTarea,
             prioridad: "media",
         };
         tareas.push(tarea);
@@ -22,58 +22,57 @@ function filtrarTareasPorPrioridad(prioridad) {
 }
 
 function actualizarListaTareas() {
-    taskList.innerHTML = "";
+    listaTareas.innerHTML = "";
     const tareasFiltradas = filtroPrioridad.value === "todas" ? tareas : filtrarTareasPorPrioridad(filtroPrioridad.value);
     
     tareasFiltradas.forEach(tarea => {
         const li = document.createElement("li");
         li.textContent = tarea.texto;
-        taskList.appendChild(li);
+        listaTareas.appendChild(li);
     });
 }
 
-//---------Gastos----------
-const gastoInput = document.getElementById("gastoInput");
-const categoriaInput = document.getElementById("categoriaInput");
-const gastoList = document.getElementById("gastoList");
-const gastoTotal = document.getElementById("gastoTotal");
+// Rastreador de Gastos
+const montoGasto = document.getElementById("montoGasto");
+const categoriaGasto = document.getElementById("categoriaGasto");
+const listaGastos = document.getElementById("listaGastos");
+const totalGastos = document.getElementById("totalGastos");
 const filtroCategoria = document.getElementById("filtroCategoria");
-let gasto = [];
+let gastos = [];
 
-function añadirGasto() {
-    const cantidad = parseFloat(gastoInput.value);
-    const categoria = categoriaInput.value.trim();
+function agregarGasto() {
+    const cantidad = parseFloat(montoGasto.value);
+    const categoria = categoriaGasto.value.trim();
     
     if (!isNaN(cantidad) && categoria !== "") {
-        const gastos = {
+        const gasto = {
             cantidad: cantidad,
             categoria: categoria,
         };
-        
-        gasto.push(gastos);
-        actualizarGastoList();
+        gastos.push(gasto);
+        actualizarListaGastos();
         actualizarTotalGastos();
-        gastoInput.value = "";
-        categoriaInput.value = "";
+        montoGasto.value = "";
+        categoriaGasto.value = "";
     }
 }
 
 function filtrarGastosPorCategoria(categoria) {
-    return gasto.filter(gastos => gastos.categoria === categoria);
+    return gastos.filter(gasto => gasto.categoria === categoria);
 }
 
-function actualizarGastoList() {
-    gastoList.innerHTML = "";
+function actualizarListaGastos() {
+    listaGastos.innerHTML = "";
     const gastosFiltrados = filtroCategoria.value === "todas" ? gastos : filtrarGastosPorCategoria(filtroCategoria.value);
     
     gastosFiltrados.forEach(gasto => {
         const li = document.createElement("li");
         li.textContent = `${gasto.categoria}: $${gasto.cantidad.toFixed(2)}`;
-        gastoList.appendChild(li);
+        listaGastos.appendChild(li);
     });
 }
 
 function actualizarTotalGastos() {
-    const total = gasto.reduce((acc, gasto) => acc + gasto.cantidad, 0);
-    gastoTotal.textContent = total.toFixed(2);
+    const total = gastos.reduce((acumulador, gasto) => acumulador + gasto.cantidad, 0);
+    totalGastos.textContent = total.toFixed(2);
 }
