@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>MyTaskMoney</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Mi Gestor de Tareas y Gastos</title>
 </head>
 <body>
-    <h1 class="titulo">MyTaskMoney</h1>
-    <div class="tareas">
-        <h1>Tareas</h1>
-        <input type="text" id="tareaInput" placeholder="Ingresar tarea">
-        <button onclick="añadirTarea()">Añadir Tarea</button>
-        <ul id="tareaList"></ul>
+    <div class="gestor-tareas">
+        <h1>Gestor de Tareas</h1>
+        <input type="text" id="tareaInput" placeholder="Ingrese una tarea">
+        <button onclick="agregarTarea()">Agregar Tarea</button>
+        <ul id="listaTareas"></ul>
         <label for="filtroPrioridad">Filtrar por Prioridad:</label>
         <select id="filtroPrioridad" onchange="actualizarListaTareas()">
             <option value="todas">Todas</option>
@@ -21,13 +20,13 @@
             <option value="baja">Baja</option>
         </select>
     </div>
-    <div class="gastos">
-        <h1>Gastos</h1>
-        <input type="number" id="gastoInput" placeholder="Ingresar gasto">
-        <input type="text" id="categoriaInput" placeholder="Categoria">
-        <button onclick="añadirGasto()">Añadir Gasto</button>
-        <ul id="gastoList"></ul>
-        <p>Gasto Total: $<span id="gastoTotal">0</span></p>
+    <div class="rastreador-gastos">
+        <h1>Rastreador de Gastos</h1>
+        <input type="number" id="montoGasto" placeholder="Ingrese el monto del gasto">
+        <input type="text" id="categoriaGasto" placeholder="Categoría del gasto">
+        <button onclick="agregarGasto()">Agregar Gasto</button>
+        <ul id="listaGastos"></ul>
+        <p>Total de Gastos: $<span id="totalGastos">0.00</span></p>
         <label for="filtroCategoria">Filtrar por Categoría:</label>
         <select id="filtroCategoria" onchange="actualizarListaGastos()">
             <option value="todas">Todas</option>
@@ -35,7 +34,6 @@
             <option value="transporte">Transporte</option>
         </select>
     </div>
-    <script src="./index.js"></script>
-    <!--<script src="./practica.js"></script>-->
+    <script src="script.js"></script>
 </body>
-</html>
+</html
