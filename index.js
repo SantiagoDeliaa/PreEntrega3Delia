@@ -77,7 +77,7 @@ function actualizarTotalGastos() {
     totalGastos.textContent = total.toFixed(2);
 }
 
-// Definir eventos y sus funciones de respuesta
+// Definicion de eventos
 listaTareas.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
         event.target.classList.toggle("completada");
@@ -110,7 +110,7 @@ listaGastos.addEventListener("click", (event) => {
     }
 });
 
-// Modificar el DOM para reflejar las acciones de los usuarios
+// Modificion del DOM para reflejar las acciones de los usuarios
 function actualizarTareasLocalStorage() {
     const tareas = Array.from(listaTareas.children).map((tarea) => {
         return {
