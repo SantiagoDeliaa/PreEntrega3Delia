@@ -1,39 +1,182 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    color: #333;
 }
 
-.tareas, .gastos {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
+.titulo {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 46px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.gestor-tareas {
+    margin: 40px 0;
+    padding: 50px;
+    background-color: #89a9e9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
     text-align: center;
 }
 
-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    margin: 10px;
-    border-radius: 4px;
-    cursor: pointer;
+.gestor-tareas h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+    color: #333;
 }
 
-ul {
+#tareaInput {
+    width: 20%;
+    padding: 9px;
+    font-size: 14px;
+    border: none;
+    background-color: #ecf0f1;
+    border-radius: 15px;
+    color: #333;
+    transition: background-color 0.3s;
+    margin: 9px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tarea-input::placeholder {
+    color: #777;
+}
+
+.tarea-input:focus {
+    background-color: #d5dbdb;
+}
+
+#listaTareas {
     list-style: none;
     padding: 0;
 }
 
-li {
-    margin: 8px 0;
+#filtroPrioridad {
+    font-family: 'Courier New', Courier, monospace;
 }
 
+#btnAgregarTarea {
+    font-family: 'Courier New', Courier, monospace;
+    border: none; 
+    color: black; 
+    padding: 10px 21px; 
+    cursor: pointer; 
+    border-radius: 20px;
+    background-color: white; border: 2px solid #04AA6D;
+}
+
+#btnAgregarTarea:hover {
+    background-color: #46a049;
+    color: white;
+}
+/*-------------------------------------Rastreador de Gastos--------------------------------*/
+.rastreador-gastos {
+    margin: 40px 0;
+    padding: 50px;
+    background-color: #6f8cc5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    text-align: center;
+}
+
+.rastreador-gastos h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+    color: #333;
+}
+
+#montoGasto {
+    width: 20%;
+    padding: 9px;
+    font-size: 14px;
+    border: none;
+    background-color: #ecf0f1;
+    border-radius: 15px;
+    color: #333;
+    transition: background-color 0.3s;
+    margin: 9px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#categoriaGasto {
+    width: 20%;
+    padding: 9px;
+    font-size: 14px;
+    border: none;
+    background-color: #ecf0f1;
+    border-radius: 15px;
+    color: #333;
+    transition: background-color 0.3s;
+    margin: 9px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.gasto-input::placeholder {
+    color: #777;
+}
+
+.gasto-input:focus {
+    background-color: #d5dbdb;
+}
+
+#filtroCategoria {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#listaGastos {
+    list-style: none;
+    padding: 0;
+}
+
+#btnAgregarGasto {
+    font-family: 'Courier New', Courier, monospace;
+    border: none; 
+    color: black; 
+    padding: 10px 21px; 
+    cursor: pointer; 
+    border-radius: 20px;
+    background-color: white; border: 2px solid #04AA6D;
+}
+
+#btnAgregarGasto:hover {
+    background-color: #46a049;
+    color: white;
+}
+
+.gasto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ecf0f1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+}
+
+.gasto:hover {
+    background-color: #d5dbdb;
+}
+
+.gasto .gasto-texto {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.gasto .boton-eliminar {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gasto .boton-eliminar:hover {
+    background-color: #c0392b;
+}
