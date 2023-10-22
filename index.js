@@ -15,6 +15,8 @@ function agregarTarea() {
         actualizarListaTareas();
         tareaInput.value = "";
         actualizarTareasLocalStorage();
+
+        Swal.fire("Tarea Agregada", "La tarea se ha registrado con éxito.", "success");
     }
 }
 
@@ -99,6 +101,8 @@ function agregarGasto() {
         categoriaGasto.value = "";
         actualizarTotalGastos();
         actualizarGastosLocalStorage();
+
+        Swal.fire("Gasto Agregado", "El gasto se ha registrado con éxito.", "success");
     }
 }
 
