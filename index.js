@@ -23,6 +23,21 @@ function filtrarTareasPorPrioridad(prioridad) {
 }
 
 function actualizarListaTareas() {
+    taskList.innerHTML = "";
+    const tareasFiltradas = filtroPrioridad.value === "todas" ? tareas : filtrarTareasPorPrioridad(filtroPrioridad.value);
+    
+    tareasFiltradas.forEach(tarea => {
+        const li = document.createElement("li");
+        li.textContent = tarea.texto;
+        taskList.appendChild(li);
+    });
+}
+
+function filtrarTareasPorPrioridad(prioridad) {
+    return tareas.filter(tarea => tarea.prioridad === prioridad);
+}
+
+function actualizarListaTareas() {
     listaTareas.innerHTML = "";
     const tareasFiltradas = filtroPrioridad.value === "todas" ? tareas : filtrarTareasPorPrioridad(filtroPrioridad.value);
 
@@ -89,6 +104,10 @@ function agregarGasto() {
 
 function filtrarGastosPorCategoria(categoria) {
     return gastos.filter(gasto => gasto.categoria.toLowerCase() === categoria.toLowerCase()); 
+}
+
+function filtrarGastosPorCategoria(categoria) {
+    return gasto.filter(gastos => gastos.categoria === categoria);
 }
 
 function actualizarListaGastos() {
